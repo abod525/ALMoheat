@@ -1,1 +1,15 @@
+# تجاهل مكتبات البرمجة (الأهم)
 node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# تجاهل ملفات البيئة السرية
+.env
+
+# تجاهل مجلدات النسخة النهائية
+build/
+dist/
+
+# تجاهل ملفات النظام
+.DS_Store
+Thumbs.db
