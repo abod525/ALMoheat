@@ -1,0 +1,239 @@
+/* Main App Styles */
+.app-container {
+    min-height: 100vh;
+    background-color: hsl(210 40% 98%);
+}
+
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 16rem;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    border-left: 1px solid hsl(214 32% 91%);
+    z-index: 50;
+    transition: all 0.3s ease;
+}
+
+.sidebar-collapsed {
+    width: 4.5rem;
+}
+
+.main-content {
+    margin-right: 16rem;
+    min-height: 100vh;
+    transition: margin-right 0.3s ease;
+}
+
+.main-content-expanded {
+    margin-right: 4.5rem;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(100%);
+    }
+    
+    .sidebar-open {
+        transform: translateX(0);
+    }
+    
+    .main-content {
+        margin-right: 0;
+    }
+}
+
+/* Card hover effects */
+.card-hover {
+    transition: all 0.2s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Status badges */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.status-success {
+    background-color: hsl(160 84% 95%);
+    color: hsl(160 84% 30%);
+    border: 1px solid hsl(160 84% 80%);
+}
+
+.status-warning {
+    background-color: hsl(43 96% 95%);
+    color: hsl(43 96% 30%);
+    border: 1px solid hsl(43 96% 80%);
+}
+
+.status-danger {
+    background-color: hsl(0 84% 95%);
+    color: hsl(0 84% 40%);
+    border: 1px solid hsl(0 84% 80%);
+}
+
+.status-neutral {
+    background-color: hsl(210 40% 96%);
+    color: hsl(215 16% 47%);
+    border: 1px solid hsl(214 32% 91%);
+}
+
+/* Table improvements */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th {
+    background-color: hsl(210 40% 96%);
+    font-weight: 600;
+    text-align: right;
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid hsl(214 32% 91%);
+}
+
+.data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid hsl(214 32% 91%);
+}
+
+.data-table tr:hover {
+    background-color: hsl(210 40% 98%);
+}
+
+/* Form styles */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: hsl(222 47% 11%);
+    margin-bottom: 0.5rem;
+}
+
+/* Button variants */
+.btn-primary {
+    background-color: hsl(222 47% 11%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: hsl(222 47% 20%);
+}
+
+.btn-secondary {
+    background-color: white;
+    color: hsl(222 47% 11%);
+    border: 1px solid hsl(214 32% 91%);
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: hsl(210 40% 96%);
+}
+
+/* Loading spinner */
+.spinner {
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid hsl(214 32% 91%);
+    border-top-color: hsl(217 91% 60%);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Empty state */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    text-align: center;
+    color: hsl(215 16% 47%);
+}
+
+.empty-state-icon {
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+/* Metric card */
+.metric-card {
+    background: white;
+    border: 1px solid hsl(214 32% 91%);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.metric-card:hover {
+    border-color: hsl(214 32% 80%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.metric-value {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: hsl(222 47% 11%);
+    line-height: 1;
+}
+
+.metric-label {
+    font-size: 0.875rem;
+    color: hsl(215 16% 47%);
+    margin-top: 0.5rem;
+}
+
+/* Navigation active state */
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    color: hsl(215 16% 47%);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.nav-item:hover {
+    background-color: hsl(210 40% 96%);
+    color: hsl(222 47% 11%);
+}
+
+.nav-item-active {
+    background-color: hsl(217 91% 95%);
+    color: hsl(217 91% 50%);
+}

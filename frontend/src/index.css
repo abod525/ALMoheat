@@ -1,0 +1,107 @@
+/* 1. استيراد خط تجوال (Tajawal) بأوزان متعددة */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    direction: rtl;
+}
+
+/* 2. تطبيق الخط والألوان الأساسية */
+body {
+    margin: 0;
+    font-family: 'Tajawal', sans-serif; /* الخط الجديد */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    direction: rtl;
+    @apply bg-slate-50 text-slate-900; /* خلفية فاتحة ولون خط كحلي */
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* المتغيرات الأساسية (حافظنا عليها لضمان عمل shadcn/ui) */
+@layer base {
+    :root {
+        --background: 210 40% 98%;
+        --foreground: 222 47% 11%;
+        --card: 0 0% 100%;
+        --card-foreground: 222 47% 11%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222 47% 11%;
+        --primary: 222 47% 11%;
+        --primary-foreground: 210 40% 98%;
+        --secondary: 210 40% 96%;
+        --secondary-foreground: 222 47% 11%;
+        --muted: 210 40% 96%;
+        --muted-foreground: 215 16% 47%;
+        --accent: 217 91% 60%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 214 32% 91%;
+        --input: 214 32% 91%;
+        --ring: 222 47% 11%;
+        --radius: 0.75rem; /* زوايا أكثر انحناءً */
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+}
+
+/* 3. سكرول بار أنيق ومستدير */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-400;
+}
+
+/* 4. كلاس تأثير الزجاج (Glassmorphism) */
+.glass-panel {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-sm;
+}
+
+/* RTL Helpers */
+.rtl-flip {
+    transform: scaleX(-1);
+}
+
+/* تنسيق الأرقام لتظهر بشكل جميل */
+.num-ar {
+    font-variant-numeric: tabular-nums;
+    font-family: 'Tajawal', sans-serif;
+    direction: ltr;
+    display: inline-block;
+}
+
+/* Animations */
+.animate-fadeIn {
+    animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media print {
+    .no-print { display: none !important; }
+    body { font-size: 12pt; }
+}
